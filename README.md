@@ -11,7 +11,7 @@ The following desktop application is Student Information System (SIS) designed t
 * Add final marka for a student
 * Edit Student marks
 * Student List
-* Student Grade Report
+* Student Grade Report generated to a PDF file
 * About page
 
 <br/>
