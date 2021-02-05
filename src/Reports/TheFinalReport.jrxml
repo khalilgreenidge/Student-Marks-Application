@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e02cb22a-ebd4-4329-9517-e06ba612e232">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean( (new Double( ( (($F{TEST1}.doubleValue())/100)* 0.10  + (($F{TEST2}.doubleValue())/100)* 0.10 
++ (($F{ASSIGNMENT}.doubleValue())/100)* 0.10 + (($F{PROJECT}.doubleValue())/100)* 0.10 
+ ) / 0.400 * 100 ) ) < 50
+|| 
+(new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) <=45 )]]></conditionExpression>
+			<style forecolor="#000000" backcolor="#FF0000"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM coursemarks]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FIRST_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LAST_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TEST1" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TEST2" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ASSIGNMENT" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PROJECT" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PAPER1" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PAPER2" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COMMENTS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="97">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="842" height="117" backcolor="#0066FF" uuid="7bd7fc07-a1f5-4180-8b90-089e9ddfaaaa"/>
+				<staticText>
+					<reportElement x="20" y="11" width="234" height="43" forecolor="#FFFFFF" uuid="b363147c-bedb-4430-8a48-4bd5ffde2cc3"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Final Report]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="67" width="180" height="20" forecolor="#FFFFFF" uuid="81fdcfc9-7268-4b7f-a5ff-f38eb79bb474"/>
+					<textElement>
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[The student's final results]]></text>
+				</staticText>
+				<image>
+					<reportElement x="701" y="0" width="141" height="117" uuid="b7332959-244f-4389-8473-7c6a6dc546f5"/>
+					<imageExpression><![CDATA["F:\\School year 2\\Oops\\NetBeansWorkspace\\MarkBook\\src\\MarkBookApp\\book2.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23">
+			<line>
+				<reportElement x="113" y="20" width="595" height="1" forecolor="#666666" uuid="63573643-df6b-446a-b0c3-9350d910ec77"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="1" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="79f85dd9-2a56-4daf-b7e9-d8fb872715d9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="55" y="1" width="96" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="3fe5c2cc-1f56-4ce9-a399-951bf1b2cc84"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="657" y="1" width="145" height="21" forecolor="#006699" backcolor="#E6E6E6" uuid="978476ef-dcc4-44ba-85d0-58a46a8dba63"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMMENTS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="602" y="1" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="d832e8b4-e49d-4f0b-8397-d603e27311e0"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAPER2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="547" y="1" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8d3152ed-18e9-4c45-a0da-2a9cc8ca7bea"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAPER1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="475" y="0" width="71" height="21" forecolor="#006699" backcolor="#E6E6E6" uuid="9d0682a5-fa94-4c7d-af80-8c750f2bd9a8"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROJECT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="268" y="1" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a2819b47-1ecb-4d4d-9a3c-794302c2e2a4"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEST1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="323" y="1" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="051f5610-36c9-46f5-9f13-6997f8453f8a"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEST2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="379" y="1" width="95" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="42914c91-da91-412b-a70c-6570c26bcf78"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASSIGNMENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="151" y="1" width="117" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e294486f-1136-4a1e-8a98-dc1dd31f8378"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAST_NAME]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="96">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="e3cb572b-2e2f-48ba-a1bc-ca4a9ce431f1"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="55" height="20" uuid="05e2f2d6-3a08-4d50-9052-a00bd7a8ec75"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="657" y="0" width="145" height="90" uuid="e80b29c9-3147-42db-bfbe-60ae5ef4d16d"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COMMENTS}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="601" y="0" width="55" height="20" uuid="b2c5f72c-a721-409c-b23f-9f00d99d252e"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAPER2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="547" y="1" width="55" height="20" uuid="5d886d47-6f22-45fa-8c81-eb87d3296a3b"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAPER1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="475" y="1" width="71" height="21" uuid="42bb444c-01a9-4329-a5f7-63f0bd62a829"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PROJECT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="55" y="0" width="96" height="20" uuid="49b8e5fd-c4f2-4c42-a505-12c3a450752f"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FIRST_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="270" y="0" width="55" height="20" uuid="b46c57e4-1261-4a1c-bd32-77afb8acdca0"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TEST1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="325" y="0" width="55" height="20" uuid="7b43a5bd-ebd7-4736-831c-1c55b943b5a1"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TEST2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="380" y="0" width="94" height="20" uuid="dc4fbcd4-0ecd-4fe2-9dcf-3bd939225e52"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ASSIGNMENT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="153" y="-1" width="115" height="20" uuid="18fa43f8-4902-4b4a-8356-43d2956f6542"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LAST_NAME}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#.##" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="327" y="31" width="50" height="20" uuid="d66fec71-bca9-4d67-a268-7a56b1d22407"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )]]></textFieldExpression>
+			</textField>
+			<textField pattern="#.##" isBlankWhenNull="true">
+				<reportElement style="style1" mode="Opaque" x="53" y="66" width="48" height="20" uuid="3931e8ce-753a-40e1-98ca-23ba334fc59f"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) >= 85 ? "A+" 
+: (new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) >= 75 ? "A" 
+: (new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) >=65 ? "B+"
+: (new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) >=55 ? "B"
+: (new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+(($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) >= 45 ? "C"
+: (new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) > 0 ? "F" 
+: "NO GRADE"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="240" y="31" width="88" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="3832076d-0328-4912-8e94-553688f104a0"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Final %]]></text>
+			</staticText>
+			<textField pattern="#.##" isBlankWhenNull="true">
+				<reportElement style="style1" mode="Opaque" x="89" y="31" width="69" height="20" uuid="1ff0767e-1d93-48e5-9a0b-20050515ce40"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Double( ( (($F{TEST1}.doubleValue())/100)* 0.10  + (($F{TEST2}.doubleValue())/100)* 0.10 
++ (($F{ASSIGNMENT}.doubleValue())/100)* 0.10 + (($F{PROJECT}.doubleValue())/100)* 0.10 
+ ) / 0.400 * 100 )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="491" y="31" width="88" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="3caac272-220c-450c-9f42-a8df83f2ad15"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paper %]]></text>
+			</staticText>
+			<textField pattern="#.##" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="578" y="31" width="54" height="20" uuid="aa227ae7-dbaa-4da8-aa74-abc21e54e2d5"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Double( ( ($F{PAPER1}/100 *0.30) + ($F{PAPER2} /100 * 0.30) ) /0.6 * 100 )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="66" width="52" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="af7bd28a-2665-47c1-9548-2b3cbe8acc8b"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="31" width="88" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="23babf35-aea5-4bbd-93ff-f55dfcdd6e3b"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Semester %]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="45e74453-b2ad-4465-abb9-cfd0bf291e04"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="306bb422-4d51-4aaa-8ef3-494f3831d425"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="1c9199fc-b4dd-47c0-be33-e9064904fd54"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

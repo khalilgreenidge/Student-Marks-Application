@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" uuid="a8bfb706-9cc7-4885-8564-cf17a0915ed1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="55"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean( (new Double( ( (($F{TEST1}.doubleValue())/100)* 0.10  + (($F{TEST2}.doubleValue())/100)* 0.10 
++ (($F{ASSIGNMENT}.doubleValue())/100)* 0.10 + (($F{PROJECT}.doubleValue())/100)* 0.10 
+ ) / 0.400 * 100 ) ) < 50
+|| 
+(new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) <=45 )]]></conditionExpression>
+			<style forecolor="#000000" backcolor="#FF0000"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM coursemarks ORDER BY last_name ASC]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FIRST_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LAST_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TEST1" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TEST2" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ASSIGNMENT" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PROJECT" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PAPER1" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PAPER2" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="157">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-21" width="793" height="178" backcolor="#0066FF" uuid="6ae96587-7fa0-48b7-9136-a6079abe1f2a"/>
+				<staticText>
+					<reportElement x="20" y="20" width="251" height="43" forecolor="#FFFFFF" uuid="f78f7534-47bd-45d0-9860-fc85aa72358c"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Student Report]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="99" width="180" height="37" forecolor="#FFFFFF" uuid="976cbd05-5075-46a6-9680-94601879181e"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[The student's report for the semester]]></text>
+				</staticText>
+				<image>
+					<reportElement mode="Transparent" x="555" y="0" width="238" height="178" uuid="4eb4982e-cf38-4fe2-8c24-f184e3c36333"/>
+					<imageExpression><![CDATA["F:\\School year 2\\Oops\\NetBeansWorkspace\\MarkBook\\src\\MarkBookApp\\book2.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="00e64d25-38b8-4eba-a70b-1fdc28fa850e"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="1" width="63" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4053a1e3-b81c-4efa-9c14-9db2102e1bc9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="64" y="1" width="96" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="df1021d4-2920-4044-bca7-f74e3075987f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="269" y="1" width="73" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a308d20d-f489-40c5-b70d-291b412e0d06"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEST1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="402" y="0" width="103" height="21" forecolor="#006699" backcolor="#E6E6E6" uuid="38dfa19c-e8db-4b45-854c-c72cf11b95e7"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASSIGNMENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="505" y="0" width="75" height="21" forecolor="#006699" backcolor="#E6E6E6" uuid="4d0c8f42-4083-431a-ac70-f6b2cf3a7614"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROJECT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="580" y="1" width="86" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="dc9634ba-2a37-4fbb-9b23-84ca19c6c007"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAPER1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="665" y="1" width="87" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="067912eb-b789-4abb-9dd5-8f94712c563a"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAPER2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="341" y="1" width="61" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="edef43dd-661c-4252-8407-8a8c6766a434"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEST2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="157" y="1" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b3d43979-e05c-45eb-b4f2-1d49e2b838d0"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAST_NAME]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="115">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="70b726f9-7261-4c7a-93a4-08becb6b9929"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="1" width="63" height="20" uuid="dba188fd-ed96-4ff0-8a59-e394f1a24bb5"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="64" y="1" width="96" height="20" uuid="766a70f9-9e32-4b9e-9a11-5d4d4b67d213"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FIRST_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="402" y="0" width="103" height="21" uuid="9d9f61da-4d63-40ed-9b0f-5408518d5f5f"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ASSIGNMENT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="505" y="0" width="75" height="21" uuid="142b0648-26d7-4ee4-96f0-bf0c144ce227"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PROJECT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="580" y="-1" width="88" height="20" uuid="d7db3a76-fe99-4f1b-843f-44e02376f894"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAPER1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#.##" isBlankWhenNull="true">
+				<reportElement style="style1" mode="Opaque" x="100" y="42" width="60" height="20" uuid="53da3fc2-839b-496a-a20b-1f3c8d7c86ae"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Double( ( (($F{TEST1}.doubleValue())/100)* 0.10  + (($F{TEST2}.doubleValue())/100)* 0.10 
++ (($F{ASSIGNMENT}.doubleValue())/100)* 0.10 + (($F{PROJECT}.doubleValue())/100)* 0.10 
+ ) / 0.400 * 100 )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="271" y="0" width="73" height="20" uuid="8fe0ab12-777c-4acd-86f3-6b19fb7ee3f2"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TEST1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="665" y="0" width="87" height="20" uuid="fe92991f-0f51-4f3a-a8c9-954be9b6e403"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAPER2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="341" y="1" width="61" height="20" uuid="7c160a96-14dd-46b2-80af-5e85e1d5ad81"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TEST2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="160" y="1" width="111" height="20" uuid="5b821ca1-4702-4911-8594-3957ed5000ea"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LAST_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="12" y="42" width="88" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="44880a52-501d-477b-a4ab-701b2e5f0b59"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Semester %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="244" y="42" width="88" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="364a641e-c326-49aa-a8ae-ed437b472c8a"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Final %]]></text>
+			</staticText>
+			<textField pattern="#.##" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="332" y="42" width="70" height="20" uuid="ceb5db7f-318c-476a-bc7c-5251b57175ee"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="519" y="42" width="88" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ebf3bbb8-c13e-4fb5-a4d2-2c148699c710"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paper %]]></text>
+			</staticText>
+			<textField pattern="#.##" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="606" y="41" width="60" height="20" uuid="db208caa-b2f1-4247-88cb-ecd6ab59e9fc"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Double( ( ($F{PAPER1}/100 *0.30) + ($F{PAPER2} /100 * 0.30) ) /0.6 * 100 )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="12" y="77" width="52" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a7f7b853-007a-412f-9940-07b62271bcd6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grade]]></text>
+			</staticText>
+			<textField pattern="#.##" isBlankWhenNull="true">
+				<reportElement style="style1" mode="Opaque" x="63" y="77" width="48" height="20" uuid="1127b600-707d-4ccb-b953-db069340b022"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) >= 85 ? "A+" 
+: (new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) >= 75 ? "A" 
+: (new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) >=65 ? "B+"
+: (new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) >=55 ? "B"
+: (new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+(($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) >= 45 ? "C"
+: (new Double( (  ( ( ($F{TEST1}/100* 0.10)  + 
+($F{TEST2} /100 * 0.10) + 
+($F{ASSIGNMENT}/100 * 0.10) + 
+($F{PROJECT}/100* 0.10) ) / 0.400 * 100 ) + 
+  (($F{PAPER1}/100 * 0.30) + ($F{PAPER2}/100 * 0.30) ) /0.6 * 100  )/200 * 100 )) > 0 ? "F" 
+: "NO GRADE"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="65">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="0c5550fc-2be6-4a66-99a1-b9dc1b499da9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="91c2d195-b623-4354-9317-f2555290360b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="0e7db8f9-65f3-42ca-bf0a-b48bb3196968"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
